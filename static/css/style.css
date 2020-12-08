@@ -1,0 +1,86 @@
+body, html {
+  height: 100%;
+  font-family: "Lucida Console", "Courier New", monospace;
+   padding-bottom: 70px; 
+}
+
+.bg { 
+  /* The image used */
+  background-image: url("../images/health.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1,h6{
+    color:#2d707d;
+}
+/*
+ * -- Landing page --
+ */
+
+ .landing {
+    margin: 10%;
+    background-color:#97dedede;
+    padding: 2%;
+    border-radius: 5px;
+}
+ 
+/* This is the main heading that appears on the blue section */
+.landing-head {
+    color: #2d707d;
+    border: 3px solid #2d707d;
+    padding: 1.5em 1.5em;
+    border-radius: 5px;
+}
+
+.auth-head-padding{
+        padding: 0.2em;
+}
+/* This is the subheading that appears on the blue section */
+.landing-subhead {
+    color: #2d707d;
+    letter-spacing: 0.05em;
+}
+
+.bg-notify{
+    background-color:#4ec3c1;
+}
+.bg-btn{
+    background-color:#2d707d;
+}
+.txt-color{
+    color:#2d707d;
+}
+
+.no-bullet{
+    list-style-type: none;
+}
+
+.nav-pad{
+    padding: 0.5em;
+}
+.wrapper {
+  height: 200px;
+  width: 100%;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bg-morning{
+ background-image: url("../images/morning.jpg");
+}
+.bg-evening{
+ background-image: url("../images/evening.jpg");
+}
+
+.no-bg{
+    background: none;
+    border: none;
+}

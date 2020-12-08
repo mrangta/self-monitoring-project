@@ -1,0 +1,58 @@
+<%- include('./partials/navbar.ejs') , {user: user} %>
+<div class="row landing text-center m-0">
+    <h1 class="landing-head auth-head-padding">Morning</h1>
+    <% if (errors) { %>
+    <%- include('./partials/errors.ejs', errors) %>
+    <% } %>
+    <form method="POST" action="/behavior/reporting/morning">
+        <div class="mb-3 row">
+            <label for="inputDate" class="col-sm-4 col-form-label">Select Date</label>
+            <div class="col-sm-8">
+                <input id="inputDate"  class="form-control" type="date" name="date" value="<%= date %>" />
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputSleepDuration" class="col-sm-4 col-form-label">Sleep duration (Hours)</label>
+            <div class="col-sm-8">
+                <input id="inputSleepDuration" type="number" class="form-control"  placeholder="for example: 0.1"  name="sleepDuration" value="<%= sleepDuration %>" step="0.1" min="0" max="24" required />
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputSleepQuality" class="col-sm-4 col-form-label">Sleep Quality (1(Poor) - 5(Excellent))</label>
+            <div class="col-sm-8">
+                <% for(var i = 1; i <= 5; i++) { %>
+                <% if(sleepQuality === i) { %>
+                <input class="form-check-input" type="radio" class="form-control"  id="quality-<%= i %>" name="sleepQuality" value="<%= i %>" checked required>
+                <label class="form-check-label" for="<%= i %>"><%= i %></label>
+                <% } else { %>
+                <input class="form-check-input" type="radio" class="form-control"  id="quality-<%= i %>" name="sleepQuality" value="<%= i %>" required>
+                <label class="form-check-label" for="<%= i %>"><%= i %></label>
+                <% } %>
+                <% } %>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputGenericMood" class="col-sm-4 col-form-label">Generic Mood (1(Poor) - 5(Excellent))</label>
+            <div class="col-sm-8">
+                <% for(var i = 1; i <= 5; i++) { %>
+                <% if(morningMood === i) { %>
+                <input class="form-check-input" type="radio" class="form-control" id="mood-<%= i %>" name="mood" value="<%= i %>" checked required>
+                <label class="form-check-label" for="<%= i %>"><%= i %></label>
+                <% } else { %>
+                <input class="form-check-input" type="radio" class="form-control" id="mood-<%= i %>" name="mood" value="<%= i %>" required>
+                <label class="form-check-label" for="<%= i %>"><%= i %></label>
+                <% } %>
+                <% } %>
+            </div>
+        </div>
+        <div class="mb-3 ">
+            <% if(morningDone) { %>
+            <button type="submit" class="btn bg-btn text-white mb-3">Update report!</button>
+            <% } else { %>
+            <button type="submit" class="btn bg-btn text-white mb-3" >Submit report!</button>
+            <% } %>
+        </div>
+    </form>
+</div>
+
+<%- include('./partials/footer.ejs') %>

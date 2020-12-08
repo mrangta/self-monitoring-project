@@ -1,0 +1,8 @@
+
+<ul class="no-bullet">
+    <% Object.keys(errors).forEach((attribute) => { %>
+        <% Object.values(errors[attribute]).forEach((error) => { %>
+            <li class="alert alert-danger"><%= error %></li>
+        <% }); %>
+    <% }); %>
+</ul>

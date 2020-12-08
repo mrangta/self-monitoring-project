@@ -1,0 +1,21 @@
+<%- include('./header.ejs') %>
+<nav class="navbar navbar-expand-md navbar-dark bg-btn nav-pad">
+    <a class="navbar-brand " href="/">Self-Monitoring App</a> |
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav w-100">
+            <a href="/behavior/reporting" class="nav-item nav-link active">Reporting</a>
+            <a href="/behavior/summary" class="nav-item nav-link active">Summary</a>
+        </div>
+        <div class="navbar-nav ml-auto">
+        <form class="d-flex" method="POST" action="/auth/logout">
+            <a class="nav-link text-white m-1" href="#">Logged in as <%= user.email %></a> 
+            <button class="btn  btn-outline-info text-white" type="submit" value="logout">Logout</button>
+        </form>
+        </div>
+    </div>
+</nav>
+

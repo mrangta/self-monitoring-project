@@ -1,0 +1,56 @@
+<%- include('./partials/header.ejs') %>
+
+
+<!-- Container (Landing Page) -->
+    <div class="row landing text-center">
+        <h1 class="landing-head">Self-Monitoring Application</h1>
+        <p class="landing-subhead">
+            An application for analysing and monitoring your daily
+            activities, such as your generic mood, sleeping hours, study hours and physical exercise hours
+        </p>
+        <div class="row">
+            <div class="col-sm-6 mt-1">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title"><%= genericMoodToday %></h1>
+                        <h6 class="card-text">Generic Mood Today</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 mt-1">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title"><%= genericMoodYesterday %></h1>
+                        <h6 class="card-text">Generic Mood Yesterday</h6>
+                    </div>
+                </div>
+            </div>
+                </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <div class="alert alert-warning">
+                        <% if( genericMoodToday > genericMoodYesterday ) { %>
+                        Things are looking bright today <i class="fas fa-smile"></i>
+                        <% } else if (genericMoodToday < genericMoodYesterday) { %>
+                        Things are looking gloomy today <i class="fa fa-frown"></i>
+                        <% } else { %>
+                        Things are looking same as yesterday
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center mt-4">
+                <div class="col mt-1">
+                    <a href="/auth/login" class="btn bg-btn text-white" tabindex="-1" role="button" >Login!</a>
+                </div>
+                <div class="col mt-1">
+                    <a href="/auth/registration" class="btn bg-btn text-white" tabindex="-1" role="button">Register!</a>
+                </div>
+                <div class="col mt-1">
+                    <a href="/behavior/reporting" class="btn bg-btn text-white" tabindex="-1" role="button">Report Data Here!</a>
+                </div>
+            </div>
+
+</div>
+
+<%- include('./partials/footer.ejs') %>

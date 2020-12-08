@@ -1,0 +1,85 @@
+<%- include('./partials/navbar.ejs') , {user: user} %>
+<div class="row landing text-center m-0">
+    <h1 class="landing-head auth-head-padding">Activities Summary</h1>
+
+    <!-- Monthly Report -->
+    <form method="POST" class="m-2" action="/behavior/summary/month">
+
+        <div class="mb-3 row">
+            <label for="inputMonth" class="col-sm-2 col-form-label">Select Month</label>
+            <div class="col-sm-6">
+                <input type="month" id="inputMonth" class="form-control" name="month" value="2020-<%= month %>" />
+            </div>
+            <div class="col-sm-4">
+                <button type="submit" class="btn bg-btn text-white m-1">Get Monthly Report!</button>
+            </div>
+        </div>
+    </form>
+    <% if(summaryData.length > 0) { %>
+    <table class="table caption-top">
+        <caption>Summary of Month: <%= summaryData[0].month %></caption>
+        <thead class="table-light txt-color">
+            <tr>
+                <th>Average sleep duration</th>
+                <th>Average time spent on sports and exercise</th>
+                <th>Average time spent studying</th>
+                <th>Average sleep quality</th>
+                <th>Average generic mood</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= summaryData[0].avg_sleepduration.toFixed(2) %></td>
+                <td><%= summaryData[0].avg_exercise.toFixed(2) %></td>
+                <td><%= summaryData[0].avg_study.toFixed(2) %></td>
+                <td><%= summaryData[0].avg_sleepquality %></td>
+                <td><%= summaryData[0].avg_mood %></td>
+            </tr>
+        </tbody>
+    </table>
+    <% } else { %>
+    <p class="alert alert-success">No data available for the selected month </p>
+    <% } %>
+
+    <hr class="txt-color" />
+    <!-- Weekly Report -->
+
+    <form method="POST" class="m-2" action="/behavior/summary/week">
+
+        <div class="mb-3 row">
+            <label for="inputWeek" class="col-sm-2 col-form-label">Select Week</label>
+            <div class="col-sm-6">
+                <input type="week" id="inputWeek" name="week" class="form-control" value="2020-W<%= week %>" />
+            </div>
+            <div class="col-sm-4">
+                <button type="submit" class="btn bg-btn text-white m-1">Get Weekly Report!</button>
+            </div>
+        </div>
+    </form>
+    <% if(weekSummary.length > 0) { %>
+    <table class="table caption-top">
+        <caption>Summary of Week: <%= weekSummary[0].week %></caption>
+        <thead class="table-light txt-color">
+            <tr>
+                <th>Average sleep duration</th>
+                <th>Average time spent on sports and exercise</th>
+                <th>Average time spent studying</th>
+                <th>Average sleep quality</th>
+                <th>Average generic mood</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= weekSummary[0].avg_sleepduration.toFixed(2) %></td>
+                <td><%= weekSummary[0].avg_exercise.toFixed(2) %></td>
+                <td><%= weekSummary[0].avg_study.toFixed(2) %></td>
+                <td><%= weekSummary[0].avg_sleepquality %></td>
+                <td><%= weekSummary[0].avg_mood %></td>
+            </tr>
+        </tbody>
+    </table>
+    <% } else { %>
+    <p class="alert alert-success">No data available for the selected week </p>
+    <% } %>
+
+</div>

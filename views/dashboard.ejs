@@ -1,0 +1,43 @@
+<%- include('./partials/navbar.ejs') , {user: user} %>
+
+<div class="row landing text-center m-0">
+  <h1 class="landing-head auth-head-padding">Report Activities</h1>
+  <div class="row">
+    <div class="col-sm-6 mt-1">
+      <div class="card no-bg">
+        <div class="card-body">
+          <h1 class="card-title"></h1>
+          <h6 class="card-text">
+            <a href="/behavior/reporting/morning">
+              <div class="wrapper bg-morning">
+              </div>
+            </a>
+            <h5><a class="txt-color" href="/behavior/reporting/morning">Morning</a></h5>
+            <% if(morningDone){ %>
+            <p class="alert alert-success">You have already added Morning Data for today</p>
+            <% } %>
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 mt-1">
+      <div class="card no-bg">
+        <div class="card-body">
+          <h1 class="card-title"></h1>
+          <h6 class="card-text">
+            <a href="/behavior/reporting/evening">
+              <div class="wrapper bg-evening">
+              </div>
+            </a>
+            <h5><a class="txt-color" href="/behavior/reporting/evening">Evening</a></h5>
+            <% if(eveningDone){ %>
+            <p class="alert alert-success">You have already added Evening Data for today</p>
+            <% } %>
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>
