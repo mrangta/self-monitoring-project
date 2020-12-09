@@ -2,10 +2,20 @@
 import { Pool } from "../deps.js";
 import { dbconfig } from "../config/config.js";
 
+const CONCURRENT_CONNECTIONS = 5;
 
-const database = Deno.env.toObject().database || dbconfig.database;
+const DATABASE_URL = Deno.env.toObject().DATABASE_URL || dbconfig.database;
 
-const connectionPool = new Pool(database, 5);
+const connectionPool = new Pool(DATABASE_URL, CONCURRENT_CONNECTIONS);
+
+const getPort = () => {
+  let port = 7777;
+  if (Deno.args.length > 0) {
+    const lastArgument = Deno.args[Deno.args.length - 1];
+    port = Number(lastArgument);
+  }
+  return port;
+}
 
 const executeQuery = async(query, ...args) => {
   const client = await connectionPool.connect();
@@ -20,4 +30,4 @@ const executeQuery = async(query, ...args) => {
   return null;
 }
 
-export { executeQuery };
+export { executeQuery, getPort };
