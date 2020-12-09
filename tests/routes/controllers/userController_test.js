@@ -15,6 +15,8 @@ Deno.test("GET to /auth/registration should always return HTML web-page with sta
         .expect(200)
 });
 
+
+/*
 Deno.test("POST to /auth/registration should return status 200 when registration is successful", async () => {
     const testClient = await superoak(app);
     const randomString = Math.random().toString(36).substring(7);
@@ -52,3 +54,4 @@ Deno.test("POST to /auth/login should return HTML web-page with status 200 when 
         .expect(200)
 });
 
+*/

@@ -7,7 +7,7 @@ Deno.test("GET to /behavior/reporting should return HTML web-page with status 20
         .expect("Content-Type", "text/html; charset=utf-8")
         .expect(200);
 });
-
+/*
 Deno.test("GET to /behavior/reporting should return HTML web-page with status 200 and a user in session", async () => {
     const testClient = await superoak(app);
     await testClient.get("/behavior/reporting")
@@ -45,7 +45,7 @@ Deno.test("GET to /behavior/reporting/evening should return HTML web-page with s
         .expect("Content-Type", "text/html; charset=utf-8")
         .expect(200);
 });
-
+*/
 
 // Deno.test("POST to /behavior/reporting/evening should always return error if no userId ", async () => {
 //     const testClient = await superoak(app);
