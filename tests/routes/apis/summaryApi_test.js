@@ -18,9 +18,9 @@ import { app } from '../../../app.js';
 //     .expect(200);
 // });
 
-Deno.test("GET to /api/summary/:year/:month/:day should return status 404, if no data is present on given date", async () => {
-  const testClient = await superoak(app);
-  await testClient.get("/api/summary/2020/03/28")
-    .expect('No data available for selected date')
-    .expect(404);
-});
+// Deno.test("GET to /api/summary/:year/:month/:day should return status 404, if no data is present on given date", async () => {
+//   const testClient = await superoak(app);
+//   await testClient.get("/api/summary/2020/03/28")
+//     .expect('No data available for selected date')
+//     .expect(404);
+// });
