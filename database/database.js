@@ -2,7 +2,7 @@
 import { Pool } from "../deps.js";
 import { dbconfig } from "../config/config.js";
 
-const CONCURRENT_CONNECTIONS = 5;
+const CONCURRENT_CONNECTIONS = 3;
 
 const DATABASE_URL = Deno.env.toObject().DATABASE_URL || dbconfig.database;
 
