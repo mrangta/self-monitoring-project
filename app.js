@@ -1,7 +1,6 @@
 import { Application, viewEngine, engineFactory, adapterFactory, Session, oakCors } from "./deps.js";
 import { router } from "./routes/routes.js";
 import * as middleware from './middlewares/middlewares.js';
-import { getPort } from './database/database.js';
 
 const app = new Application();
 
@@ -26,8 +25,8 @@ app.use(viewEngine(oakAdapter, ejsEngine, {
 
 app.use(router.routes());
 
-if (!Deno.env.get('TEST_ENVIRONMENT')) {
-    app.listen({ port: getPort() });
-  }
+
+app.listen({ port: 7777 });
+
 
 export { app };

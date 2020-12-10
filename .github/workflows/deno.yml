@@ -1,21 +1,31 @@
-name: Run tests on project
+name: Run tests and build
 
 on:
+  # Triggers the workflow on push or pull request events
   push:
-    branches: [master]
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  
+  workflow_dispatch:
+
 
 jobs:
-  test:
+  
+  build:
+    
     runs-on: ubuntu-latest
 
+    
     steps:
-      - name: Setup repo
-        uses: actions/checkout@v2
-
+      
+      - uses: actions/checkout@v2
+      
       - name: Setup Deno
         uses: denolib/setup-deno@v2
         with:
           deno-version: "v1.5.4"
 
       - name: Run tests
-        run: deno test --allow-all --unstable
+        run: deno test --allow-env --allow-read --allow-net --unstable;

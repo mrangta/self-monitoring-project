@@ -1,17 +1,12 @@
-import { config } from '../deps.js';
+let config = {};
 
-let dbconfig = {};
 
-if (Deno.env.get('TEST_ENVIRONMENT')) {
-  dbconfig.database = {};
-} else {
-  dbconfig.database = {
-    hostname: config().hostname,
-    database: config().database,
-    user: config().user,
-    password: config().password,
-    port: Number(config().port)
+  config.database = {
+    hostname: "hattie.db.elephantsql.com",
+    database: "ojzxtrjz",
+    user: "ojzxtrjz",
+    password: "amOuUnPSG59bXs1EGd0zXOAq3VBygJtx",
+    port: 5432
   };
-}
 
-export { dbconfig }; 
+export { config };
