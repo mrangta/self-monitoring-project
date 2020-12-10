@@ -1,12 +1,12 @@
 import { superoak } from '../../../deps.js';
 import { app } from '../../../app.js';
 
-Deno.test("GET to /behavior/reporting should return HTML web-page with status 200", async () => {
-    const testClient = await superoak(app);
-    await testClient.get("/behavior/reporting")
-        .expect("Content-Type", "text/html; charset=utf-8")
-        .expect(200);
-});
+// Deno.test("GET to /behavior/reporting should return HTML web-page with status 200", async () => {
+//     const testClient = await superoak(app);
+//     await testClient.get("/behavior/reporting")
+//         .expect("Content-Type", "text/html; charset=utf-8")
+//         .expect(200);
+// });
 /*
 Deno.test("GET to /behavior/reporting should return HTML web-page with status 200 and a user in session", async () => {
     const testClient = await superoak(app);

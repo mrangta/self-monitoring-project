@@ -1,19 +1,19 @@
 import { superoak } from '../../../deps.js';
 import { app } from '../../../app.js';
 
-Deno.test("GET to /auth/login should always return HTML web-page with status 200", async () => {
-    const testClient = await superoak(app);
-    await testClient.get("/auth/login")
-        .expect("Content-Type", "text/html; charset=utf-8")
-        .expect(200)
-});
+// Deno.test("GET to /auth/login should always return HTML web-page with status 200", async () => {
+//     const testClient = await superoak(app);
+//     await testClient.get("/auth/login")
+//         .expect("Content-Type", "text/html; charset=utf-8")
+//         .expect(200)
+// });
 
-Deno.test("GET to /auth/registration should always return HTML web-page with status 200", async () => {
-    const testClient = await superoak(app);
-    await testClient.get("/auth/registration")
-        .expect("Content-Type", "text/html; charset=utf-8")
-        .expect(200)
-});
+// Deno.test("GET to /auth/registration should always return HTML web-page with status 200", async () => {
+//     const testClient = await superoak(app);
+//     await testClient.get("/auth/registration")
+//         .expect("Content-Type", "text/html; charset=utf-8")
+//         .expect(200)
+// });
 
 
 /*
