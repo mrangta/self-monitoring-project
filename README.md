@@ -1,6 +1,6 @@
 # Web Software Development Project - Self-Monitoring Application
 
-The address at which the application can currently be accessed is: [Demo Link]()
+The address at which the application can currently be accessed at [https://wsd-self-monitor.herokuapp.com/]
 
 There are two tables used by the application which are joined with each other using **"user_id"**, which you can create using following SQL Commands:
 
