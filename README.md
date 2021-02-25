@@ -1,4 +1,4 @@
-# Web Software Development Project - Self-Monitoring Application
+# Self-Monitoring Application
 
 The address at which the application can currently be accessed at [https://wsd-self-monitor.herokuapp.com/]
 
